@@ -34,3 +34,60 @@ body{
     font-size: 14px;
   }
 }
+
+/* --- ローディング画面（スプラッシュ画面） --- */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4a90e2; /* さわやかな青色（小石川カラーイメージ！） */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 一番手前に表示 */
+  transition: opacity 0.6s ease, visibility 0.6s ease; /* スーッと消える効果 */
+}
+
+/* 読み込み完了後に画面を隠すクラス */
+#loading.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-content {
+  text-align: center;
+}
+
+/* 学士帽アイコン */
+.loading-icon {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+/* アプリタイトル */
+.loading-title {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+/* くるくる回るスピナー（読み込み中アイコン） */
+.spinner {
+  width: 35px;
+  height: 35px;
+  margin: 0 auto;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* スピナーを回転させるアニメーション */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
